@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Shapes Gallery</title>
+    <style>
+        body {
+            background-color: #2a3d4a;
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #f8b400;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+            letter-spacing: 2px;
+        }
+
+        h1:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .canvas-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        canvas {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        canvas:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Colors for individual shapes */
+        #circle {
+            background-color: #e74c3c;
+        }
+
+        #triangle {
+            background-color: #2ecc71;
+        }
+
+        #heartCanvas {
+            background-color: #e67e22;
+        }
+
+        #pentagonCanvas {
+            background-color: #3498db;
+        }
+
+        #ovalCanvas {
+            background-color: #f39c12;
+        }
+
+        #heptagonCanvas {
+            background-color: #9b59b6;
+        }
+
+        #octagonCanvas {
+            background-color: #1abc9c;
+        }
+
+        #parallelogramCanvas {
+            background-color: #34495e;
+        }
+
+        #nonagonCanvas {
+            background-color: #e84393;
+        }
+
+        #square {
+            background-color: #27ae60;
+        }
+
+        #rectangle {
+            background-color: #f1c40f;
+        }
+
+        #starCanvas {
+            background-color: #3498db;
+        }
+
+                #diamondCanvas {
+            background-color: #8e44ad;
+        }
+
+        .created-by {
+            text-align: center;
+            color: lightgreen;
+            margin-top: 20px;
+            font-size: 30px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Shapes Gallery</h1>
+
+
+    <div class="canvas-container">
+        <canvas id="circle" width="300" height="300"></canvas>
+        <canvas id="triangle" width="300" height="300"></canvas>
+        <canvas id="heartCanvas" width="300" height="300"></canvas>
+        <canvas id="pentagonCanvas" width="300" height="300"></canvas>
+        <canvas id="ovalCanvas" width="300" height="200"></canvas>
+        <canvas id="heptagonCanvas" width="300" height="300"></canvas>
+        <canvas id="octagonCanvas" width="300" height="300"></canvas>
+        <canvas id="parallelogramCanvas" width="300" height="200"></canvas>
+        <canvas id="nonagonCanvas" width="300" height="300"></canvas>
+        <canvas id="square" width="300" height="300"></canvas>
+        <canvas id="rectangle" width="300" height="300"></canvas>
+        <canvas id="starCanvas" width="300" height="300"></canvas>
+        <canvas id="diamondCanvas" width="300" height="300"></canvas>
+    </div>
+	
+    <div class="created-by">
+        Created by Noaim Baulo
+    </div>
+    <script>
+   //square
+    var sq = document.getElementById('square').getContext("2d");
+    sq.fillText('Square', 110, 270); 
+    sq.fillStyle = "aqua";
+    sq.rect(50, 50, 200, 200);
+    sq.shadowColor = 'rgba(0, 0, 0, 0.3)'; 
+sq.shadowBlur = 10;
+sq.shadowOffsetX = 5; 
+sq.shadowOffsetY = 5;
+    sq.fill();
+    sq.strokeStyle = "black";
+    sq.lineWidth = 3;
+    sq.rect(50, 50, 100, 100);
+    
+    //rectangle
+    var rec = document.getElementById('rectangle').getContext("2d");
+    rec.fillText('Rectangle', 110, 270); 
+
+    rec.fillStyle = "#fcd8e8";
+    rec.rect(50, 100, 200, 100);
+    rec.shadowColor = 'rgba(0, 0, 0, 0.3)'; // Set shadow color
+rec.shadowBlur = 10; // Set shadow blur radius
+rec.shadowOffsetX = 5; // Set horizontal shadow offset
+rec.shadowOffsetY = 5; // Set vertical shadow offset
+
+    rec.fill(); 
+    rec.strokeStyle = "blue";
+    rec.lineWidth = 3;
+    rec.rect(50, 100, 200, 100);
+
+    //circle
+    var circle = document.getElementById('circle').getContext("2d");
+    circle.fillText('Circle', 130, 270);
+
+    circle.fillStyle = "#f1f7b5";
+    circle.arc(150, 150, 50, 0, 2*Math.PI);
+    circle.shadowColor = 'rgba(0, 0, 0, 0.3)'; // Set shadow color
+circle.shadowBlur = 10; // Set shadow blur radius
+circle.shadowOffsetX = 5; // Set horizontal shadow offset
+circle.shadowOffsetY = 5; // Set vertical shadow offset
+    circle.fill();
+    circle.strokeStyle = "black"; // Set border color
+   circle.lineWidth = 3; // Set border width
+   circle.stroke(); 
+   
+
+
+    //triangle
+    var triangle = document.getElementById('triangle').getContext("2d");
+    triangle.fillText('Triangle', 115, 270);
+
+    triangle.fillStyle = "#fcf9be";
+    triangle.moveTo(150, 50);
+    triangle.lineTo(50, 250);
+    triangle.lineTo(250, 250);
+    triangle.closePath(); // Close the path to complete the triangle
+    triangle.shadowColor = 'rgba(0, 0, 0, 0.3)'; // Set shadow color
+triangle.shadowBlur = 10; // Set shadow blur radius
+triangle.shadowOffsetX = 5; // Set horizontal shadow offset
+triangle.shadowOffsetY = 5; // Set vertical shadow offset
+triangle.fill();
+triangle.strokeStyle = "black"; // Set border color
+triangle.lineWidth = 3; // Set border width
+triangle.stroke(); // Draw border
+
+   
+        
+    var canvas = document.getElementById('heartCanvas');
+    var ctx = canvas.getContext('2d');
+    ctx.fillText('Heart', 135, 270);
+
+
+     ctx.fillStyle = '#f8c8c8';
+
+        // Draw left side of the heart
+        ctx.beginPath();
+        ctx.moveTo(150, 100);
+        ctx.bezierCurveTo(120, 40, 40, 40, 40, 100);
+        ctx.bezierCurveTo(40, 140, 150, 250, 150, 250);
+
+        // Draw right side of the heart
+        ctx.bezierCurveTo(150, 250, 260, 140, 260, 100);
+        ctx.bezierCurveTo(260, 40, 180, 40, 150, 100);
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.3)'; // Set shadow color
+ctx.shadowBlur = 10; // Set shadow blur radius
+ctx.shadowOffsetX = 5; // Set horizontal shadow offset
+ctx.shadowOffsetY = 5; // Set vertical shadow offset
+        ctx.fill();
+
+
+ctx.strokeStyle = "black"; // Set border color
+ctx.lineWidth = 3; // Set border width
+ctx.stroke(); // Draw border
+
+        var canvas = document.getElementById('pentagonCanvas');
+        var ctx = canvas.getContext('2d');
+        ctx.fillText('Pentagon', 110, 270);
+
+        ctx.fillStyle = 'yellow';
+
+        // Draw a whole pentagon
+        ctx.beginPath();
+        ctx.moveTo(150 + 100 * Math.cos(0), 150 + 100 * Math.sin(0));//moveTo method is used to move the starting point of the drawing cursor without drawing anything.
+        //150 + 100 *  Math.cos(0) is the starting point of the drawing
+        //150 + 100 * Math.sin(0)) tells how much we should move up or down. In this code, at the angle 0, it says to stay at the same level  as the point 150
+        //
+        for (var i = 1; i <= 5; i++) {
+            ctx.lineTo(150 + 100 * Math.cos(i * 2 * Math.PI / 5), 150 + 100 * Math.sin(i * 2 * Math.PI / 5));
+           //this line of code draws lines from the center point of the canvas to different outer points (based on trigonometry calculations) to create a shape, such as a pentagon, by connecting those points together.
+
+
+        }
+        ctx.closePath(); // Close the path to connect the last point with the initial point
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.3)'; // Set shadow color
+ctx.shadowBlur = 10; 
+ctx.shadowOffsetX = 5; 
+ctx.shadowOffsetY = 5; 
+        ctx.fill();//fills the color whatever the value of the color is
+
+        ctx.strokeStyle = "black"; // Set border color
+        ctx.lineWidth = 3; // Set border width
+        ctx.stroke();
+
+
+        var canvas = document.getElementById('starCanvas');
+        var ctx = canvas.getContext('2d');
+        ctx.fillText('Star', 130, 270);
+
+        ctx.fillStyle = 'lightblue';
+        
+
+        // Draw a whole star
+        ctx.beginPath();//preparing the canvas to draw something.
+        var x = 150;
+        var y = 150;//hold the x and y coordinates of the star
+        var outerRadius = 100;//stores the length of the inner and outer points of the star.
+        var innerRadius = 50;
+        var rotation = Math.PI / 2; // Rotate the star to  90 degrees point upwards
+
+        for (var i = 0; i < 5; i++) {
+            var outerX = x + Math.cos((i * 2 * Math.PI) / 5 - rotation) * outerRadius;
+            //calculates the X-coordinate of each outer point of the star based on trigonometry. It uses the Math.cos() function to find the X-coordinate relative to the center (x) and adjusts it using rotation and outer radius.
+            var outerY = y + Math.sin((i * 2 * Math.PI) / 5 - rotation) * outerRadius;
+            //calculates the Y-coordinate of each outer point based on trigonometry. It uses the Math.sin() function to find the Y-coordinate relative to the center (y) and adjusts it using rotation and outer radius.
+
+            var innerX = x + Math.cos(((i * 2 + 1) * Math.PI) / 5 - rotation) * innerRadius;
+            var innerY = y + Math.sin(((i * 2 + 1) * Math.PI) / 5 - rotation) * innerRadius;
+
+            //These lines draw lines from the previous point to the calculated outer point and then from the outer point to the inner point to create the star shape.
+            ctx.lineTo(outerX, outerY);
+            ctx.lineTo(innerX, innerY);
+        }
+        ctx.closePath(); //This line closes the path, connecting the last point to the starting point, completing the star shape.
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.3)'; // Set shadow color
+ctx.shadowBlur = 10; // Set shadow blur radius
+ctx.shadowOffsetX = 5; // Set horizontal shadow offset
+ctx.shadowOffsetY = 5; // Set vertical shadow offset
+        ctx.fill();//This fills the drawn star shape with the current fill color.
+        ctx.strokeStyle = "black"; // Set border color
+        ctx.lineWidth = 3; // Set border width
+       ctx.stroke();
+
+        var canvas = document.getElementById('ovalCanvas');
+        var ctx = canvas.getContext('2d');
+        ctx.fillText('Oval', 130, 180);
+
+
+        ctx.fillStyle = '#fff5ec';
+
+        // Draw a whole oval (ellipse)
+        ctx.beginPath();
+        ctx.ellipse(150, 100, 100, 50, 0, 0, Math.PI * 2); // x, y, radiusX, radiusY, rotation, startAngle, endAngle
+        ctx.closePath();
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.3)'; // Set shadow color
+ctx.shadowBlur = 10; // Set shadow blur radius
+ctx.shadowOffsetX = 5; // Set horizontal shadow offset
+ctx.shadowOffsetY = 5; // Set vertical shadow offset
+        ctx.fill();
+        ctx.strokeStyle = "black"; // Set border color
+       ctx.lineWidth = 3; // Set border width
+      ctx.stroke();
+        
+        var canvas = document.getElementById('heptagonCanvas');
+        var ctx = canvas.getContext('2d');
+        ctx.fillText('Heptagon', 100, 270);
+
+
+        ctx.fillStyle = 'lightgreen';
+
+        // Draw a whole heptagon
+        ctx.beginPath();
+        var x = 150;
+        var y = 150;
+        var sides = 7;
+        var size = 100;
+
+        ctx.moveTo(x + size * Math.cos(0), y + size * Math.sin(0));
+        for (var i = 1; i <= sides; i++) {
+            ctx.lineTo(x + size * Math.cos(i * 2 * Math.PI / sides), y + size * Math.sin(i * 2 * Math.PI / sides));
+        }
+        ctx.closePath();
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.3)'; // Set shadow color
+ctx.shadowBlur = 10; // Set shadow blur radius
+ctx.shadowOffsetX = 5; // Set horizontal shadow offset
+ctx.shadowOffsetY = 5; // Set vertical shadow offset
+        ctx.fill();
+
+        ctx.strokeStyle = "black"; // Set border color
+ctx.lineWidth = 3; // Set border width
+ctx.stroke();
+        var canvas = document.getElementById('octagonCanvas');
+        var ctx = canvas.getContext('2d');
+        ctx.fillText('Octagon', 110, 270);
+
+       
+
+        ctx.fillStyle = '#d3eeff';
+
+        // Draw a whole octagon
+        ctx.beginPath();
+        var x = 150;
+        var y = 150;
+        var sides = 8;
+        var size = 100;
+
+        ctx.moveTo(x + size * Math.cos(0), y + size * Math.sin(0));
+        for (var i = 1; i <= sides; i++) {
+            ctx.lineTo(x + size * Math.cos(i * 2 * Math.PI / sides), y + size * Math.sin(i * 2 * Math.PI / sides));
+        }
+        ctx.closePath();
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.3)'; // Set shadow color
+ctx.shadowBlur = 10; // Set shadow blur radius
+ctx.shadowOffsetX = 5; // Set horizontal shadow offset
+ctx.shadowOffsetY = 5; // Set vertical shadow offset
+        ctx.fill();
+        ctx.strokeStyle = "black"; // Set border color
+ctx.lineWidth = 3; // Set border width
+ctx.stroke();
+
+        var canvas = document.getElementById('parallelogramCanvas');
+        var ctx = canvas.getContext('2d');
+        ctx.fillText('Parallelogram', 70, 180);
+
+
+        ctx.fillStyle = '#f0defd';
+
+        // Draw a whole parallelogram
+        ctx.beginPath();
+        ctx.moveTo(50, 50);
+        ctx.lineTo(150, 50);
+        ctx.lineTo(200, 150);
+        ctx.lineTo(100, 150);
+        ctx.closePath();
+        ctx.fill();
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.3)'; // Set shadow color
+ctx.shadowBlur = 10; // Set shadow blur radius
+ctx.shadowOffsetX = 5; // Set horizontal shadow offset
+ctx.shadowOffsetY = 5; // Set vertical shadow offset
+        ctx.strokeStyle = "black"; // Set border color
+ctx.lineWidth = 3; // Set border width
+ctx.stroke();
+
+        var canvas = document.getElementById('nonagonCanvas');
+        var ctx = canvas.getContext('2d');
+        ctx.fillText('Nonagon', 110, 270);
+
+
+        ctx.fillStyle = '#fcf7de';
+
+        // Draw a whole nonagon
+        ctx.beginPath();
+        var x = 150;
+        var y = 150;
+        var sides = 9;
+        var size = 100;
+
+        ctx.moveTo(x + size * Math.cos(0), y + size * Math.sin(0));
+        for (var i = 1; i <= sides; i++) {
+            ctx.lineTo(x + size * Math.cos(i * 2 * Math.PI / sides), y + size * Math.sin(i * 2 * Math.PI / sides));
+        }
+        ctx.closePath();
+        ctx.fill();
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.3)'; // Set shadow color
+ctx.shadowBlur = 10; // Set shadow blur radius
+ctx.shadowOffsetX = 5; // Set horizontal shadow offset
+ctx.shadowOffsetY = 5; // Set vertical shadow offset
+        ctx.strokeStyle = "black"; // Set border color
+ctx.lineWidth = 3; // Set border width
+ctx.stroke();
+
+
+    // diamond
+    var diamond = document.getElementById('diamondCanvas').getContext("2d");
+    diamond.fillText('Diamond', 110, 270);
+
+    // Your diamond drawing code goes here
+    diamond.fillStyle = '#8e44ad';
+    diamond.beginPath();
+    diamond.moveTo(150, 50);
+    diamond.lineTo(100, 150);
+    diamond.lineTo(150, 250);
+    diamond.lineTo(200, 150);
+    diamond.closePath();
+
+    diamond.shadowColor = 'rgba(0, 0, 0, 0.3)';
+    diamond.shadowBlur = 10;
+    diamond.shadowOffsetX = 5;
+    diamond.shadowOffsetY = 5;
+
+    diamond.fill();
+    diamond.strokeStyle = "black";
+    diamond.lineWidth = 3;
+    diamond.stroke();
+
+    
+	</script>
+   
+   </html>v
